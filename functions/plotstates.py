@@ -1,3 +1,4 @@
+import matplotlib
 import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
@@ -15,11 +16,15 @@ def plotTimeSeries(Q, hidden_states, ylabel):
     ax.scatter(xs[masks], Q[masks], c='b', label='Wet State')
     ax.plot(xs, Q, c='k')
      
-    ax.set_xlabel('Year')
-    ax.set_ylabel(ylabel)
+    ax.set_xlabel('Year',fontsize=16)
+    ax.set_ylabel(ylabel,fontsize=16)
     fig.subplots_adjust(bottom=0.2)
-    handles, labels = plt.gca().get_legend_handles_labels()
-    fig.legend(handles, labels, loc='lower center', ncol=2, frameon=True)
+    matplotlib.rc('legend', fontsize = 16)
+    plt.legend() 
+    ax.set_xlabel("Year",fontsize=16)
+    ax.set_ylabel("Annual Flow (cubic feet per year)",fontsize=16)
+    plt.xticks(fontsize = 14)
+    plt.yticks(fontsize = 14)
  
     return None
  

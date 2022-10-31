@@ -1,5 +1,6 @@
 from scipy import stats as ss
 import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
 
 def plotDistribution(Q, mus, sigmas, P):
@@ -29,5 +30,8 @@ def plotDistribution(Q, mus, sigmas, P):
  
     fig.subplots_adjust(bottom=0.15)
     handles, labels = plt.gca().get_legend_handles_labels()
-    fig.legend(handles, labels, loc='lower center', ncol=3, frameon=True)
+    matplotlib.rc('legend', fontsize = 16)
+    plt.legend() 
+    plt.xticks(fontsize = 14)
+    plt.yticks(fontsize = 14)
     return None
