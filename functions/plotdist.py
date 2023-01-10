@@ -31,7 +31,8 @@ def plotDistribution(Q, mus, sigmas, P):
     fig.subplots_adjust(bottom=0.15)
     handles, labels = plt.gca().get_legend_handles_labels()
     matplotlib.rc('legend', fontsize = 16)
-    plt.legend() 
+    plt.legend()
+    plt.xlabel("Log Annual Flow $m^3$") 
     plt.xticks(fontsize = 14)
     plt.yticks(fontsize = 14)
     return None
